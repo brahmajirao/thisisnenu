@@ -1,0 +1,6 @@
+@import '~bootstrap\dist\css\bootstrap.css';
+@import '~@fortawesome\fontawesome-free\css\all.css';
+
+body{
+    padding-left:10px;
+}

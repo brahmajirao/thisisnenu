@@ -1,0 +1,13 @@
+<div><a routerLink='/memories/new/'>Add New Memory</a></div>
+<div *ngFor="let memory of memories">
+  <div>
+    <img [src]="memory.coverImage" width="150"/>
+  </div>
+  <div>
+      <div><b>{{memory.title}}</b></div>
+      <span>Created Date:{{memory.createdDate}}</span><span>UpdatedDate:{{memory.updatedDate}}</span>
+      <br/>
+      <div>{{memory.description}}</div>
+  </div>
+  
+</div>
