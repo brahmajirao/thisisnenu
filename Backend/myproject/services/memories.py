@@ -7,7 +7,7 @@ class Memories(Resource):
         for memory in memories:
             createdDate = memory.created_date
             updatedDate = memory.updated_date
-            min_description = (memory.description[:75] + '..') if len(memory.description) > 75 else memory.description
+            min_description = (memory.description[:100] + '..') if len(memory.description) > 100 else memory.description
             thumb = 'http://127.0.0.1:5000/static/images/default_thumb.png'
             if len(memory.cover_image)>0:
                 thumb = 'http://127.0.0.1:5000/images/memories/' + memory.cover_image

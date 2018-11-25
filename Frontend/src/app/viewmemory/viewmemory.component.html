@@ -1,13 +1,10 @@
-<div><a routerLink='/memories/new/'>Add New Memory</a></div>
-<div *ngFor="let memory of memories">
-  <div  style="display:inline-block; width: 100%; padding-bottom: 1%;">
+<div  style="display:inline-block; width: 100%; padding-bottom: 1%;">
     <div style="float:left;width: 170px;">
       <img [src]="memory.coverImage" width="150"/>
     </div>
     <div>
         <div>
           <b>{{memory.title}}</b>
-          <a routerLink='/memories/view/{{memory.id}}'>View</a>
           <a href="#">Edit</a>
           <a href="#">Delete</a>
         </div>
@@ -17,4 +14,3 @@
         <div>{{memory.description}}</div>
     </div>
   </div>  
-</div>

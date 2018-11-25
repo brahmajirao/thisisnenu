@@ -8,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router'
 import { MemoriesComponent } from './memories/memories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddmemoryComponent } from './addmemory/addmemory.component';
+import { ViewmemoryComponent } from './viewmemory/viewmemory.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AddmemoryComponent } from './addmemory/addmemory.component';
     NavigationComponent,
     HeaderComponent,
     MemoriesComponent,
-    AddmemoryComponent
+    AddmemoryComponent,
+    ViewmemoryComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +25,8 @@ import { AddmemoryComponent } from './addmemory/addmemory.component';
     RouterModule.forRoot([
       {path:'memories', component:MemoriesComponent},
       {path:'memories/new', component:AddmemoryComponent},
-      {path:'memories/edit/:id', component:AddmemoryComponent}
+      {path:'memories/edit/:id', component:AddmemoryComponent},
+      {path:'memories/view/:id', component:ViewmemoryComponent}
     ])
   ],
   providers: [],
