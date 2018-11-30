@@ -19,4 +19,8 @@ export class MemoriesService {
   getMemory(id):Observable<MemoryItem>{
     return this.http.get<MemoryItem>(this.memoryServiceUrl+id).pipe(map(response=>response))
   }
+
+  saveMemory(id: Number, data: MemoryItem ):Observable<MemoryItem>{
+    return this.http.put<MemoryItem>(this.memoryServiceUrl+id, data).pipe(map(response=>response))
+  }
 }

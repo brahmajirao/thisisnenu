@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -9,6 +10,7 @@ import { MemoriesComponent } from './memories/memories.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AddmemoryComponent } from './addmemory/addmemory.component';
 import { ViewmemoryComponent } from './viewmemory/viewmemory.component';
+import { CreateMemoryComponent } from './create-memory/create-memory.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { ViewmemoryComponent } from './viewmemory/viewmemory.component';
     HeaderComponent,
     MemoriesComponent,
     AddmemoryComponent,
-    ViewmemoryComponent
+    ViewmemoryComponent,
+    CreateMemoryComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
       {path:'memories', component:MemoriesComponent},
       {path:'memories/new', component:AddmemoryComponent},

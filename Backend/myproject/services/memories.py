@@ -1,4 +1,4 @@
-from flask_restful import Resource
+from flask_restful import Resource, reqparse
 from myproject.models.memories import Memory as MemoryDb
 class Memories(Resource):
     def get(self):
@@ -44,3 +44,11 @@ class Memory(Resource):
             }
 
         return output
+    def put(self, id):
+        parser = reqparse.RequestParser()
+        parser.add_argument('id', type=int)
+        parser.add_argument('title', type=str)
+        parser.add_argument('description', type=str)
+        args = parser.parse_args()
+        #todo save to db
+        return args

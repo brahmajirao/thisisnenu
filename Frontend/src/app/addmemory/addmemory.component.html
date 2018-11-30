@@ -1,3 +1,14 @@
-<p>
-  addmemory works!
-</p>
+<form ngform (ngSubmit)="editMemory()">
+  <div>
+    <div>
+      <label for="title" style="width: 100px;">Title: </label>
+      <input type="text" id="title" name="title" [(ngModel)]="memory.title" size="100" />
+    </div>
+    <div style="text-align:start">
+      <label for="description" style="width: 100px;">Description: </label>
+      <textarea name="description" id="description" [(ngModel)] ="memory.description" rows="10" cols="150"></textarea>
+    </div>
+    <input type="submit" name="create" value="Create" class="btn btn-primary">
+    <input type="button" name="cancel" value="Cancel" class="btn"/>
+  </div>
+</form>
