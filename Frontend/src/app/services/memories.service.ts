@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MemoryItem } from '../interfaces/memoryItem';
-import { map } from 'rxjs/operators';
+import { map, catchError } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +21,13 @@ export class MemoriesService {
   }
 
   saveMemory(id: Number, data: MemoryItem ):Observable<MemoryItem>{
-    return this.http.put<MemoryItem>(this.memoryServiceUrl+id, data).pipe(map(response=>response))
+    //return this.http.put<MemoryItem>(this.memoryServiceUrl+id, data).pipe(map(response=>response))
+    return this.http.put<MemoryItem>(this.memoryServiceUrl+id, data).pipe(catchError((error:Response) => {
+      if(error.status === 404) {
+        alert('unexpected error');
+      }
+      console.log(error);
+      alert(error);
+    }) as any);
   }
 }
